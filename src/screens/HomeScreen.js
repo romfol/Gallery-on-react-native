@@ -32,7 +32,7 @@ export default class HomeScreen extends Component {
             <List
               data={item}
               key={item.id}
-              onPress={() => navigation.navigate(DETAILS_PAGE, data)}
+              onPress={() => navigation.navigate(DETAILS_PAGE, item)}
             />
           ))}
         </ScrollView>

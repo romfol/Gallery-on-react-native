@@ -1,28 +1,24 @@
 import React, { Component } from 'react';
-import { Image, View, Text, ScrollView, StyleSheet } from 'react-native';
+import { Image, View, StyleSheet} from 'react-native';
+import { w, h } from '../../constants';
 
 class DetailsScreen extends Component {
   render() {
-    //const { id } = this.props.navigation.state.params;
-    console.log(
-      'proooooooooooooooooooooooooooooooooooooooooooooooooops22',
-      this.props.navigation.state.params.urls.thumb
-    );
+    const { urls } = this.props.navigation.state.params;
     return (
-      <ScrollView>
-        <View>
-          <Text>1121</Text>
-        </View>
-      </ScrollView>
+      <View>
+        <Image style={styles.photoStyle} source={{ uri: urls.full }} />
+      </View>
     );
   }
 }
-//<Image style={styles.photoStyle} source={{ uri: props.navigation.state.params.urls.full }} />;
-// const styles = StyleSheet.create({
-//   photoStyle: {
-//     width: 300,
-//     height: 300,
-//   },
-// });
+
+const styles = StyleSheet.create({
+  photoStyle: {
+    width: w,
+    height: h,
+  },
+});
 
 export default DetailsScreen;
+
