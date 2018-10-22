@@ -1,15 +1,28 @@
-import React, { PureComponent } from 'react';
-import { View, Text } from 'react-native';
+import React, { Component } from 'react';
+import { Image, View, Text, ScrollView, StyleSheet } from 'react-native';
 
-class DetailsScreen extends PureComponent {
+class DetailsScreen extends Component {
   render() {
-    console.log(this.props);
+    //const { id } = this.props.navigation.state.params;
+    console.log(
+      'proooooooooooooooooooooooooooooooooooooooooooooooooops22',
+      this.props.navigation.state.params.urls.thumb
+    );
     return (
-      <View>
-        <Text>HelloNigggas</Text>
-      </View>
+      <ScrollView>
+        <View>
+          <Text>1121</Text>
+        </View>
+      </ScrollView>
     );
   }
 }
+//<Image style={styles.photoStyle} source={{ uri: props.navigation.state.params.urls.full }} />;
+// const styles = StyleSheet.create({
+//   photoStyle: {
+//     width: 300,
+//     height: 300,
+//   },
+// });
 
 export default DetailsScreen;

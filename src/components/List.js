@@ -5,6 +5,7 @@ const List = props => {
   const { thumb } = props.data.urls;
   const { name } = props.data.user;
   const { photoStyle, container } = styles;
+  //console.log('dddddddddddddd', )
 
   return (
     <TouchableOpacity onPress={props.onPress}>
