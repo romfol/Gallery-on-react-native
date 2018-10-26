@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
 import { Header, List } from '../components';
 import { DETAILS_PAGE } from '../../routes';
+import { connect } from 'react-redux';
+import { getApi } from '../../actions';
 
 const url =
   'https://api.unsplash.com/photos/?client_id=f571da0ddf69c551d528f430bf27ab7f711a9a9d24179e57220a11998e72d3fd';
 
-export default class HomeScreen extends Component {
+class HomeScreen extends Component {
   state = {
     data: [],
   };
@@ -24,6 +26,7 @@ export default class HomeScreen extends Component {
   render() {
     const { data } = this.state;
     const { navigation } = this.props;
+    console.log('proooooooooooooooooooops', this.props);
     return (
       <View style={{ backgroundColor: 'grey' }}>
         <Header />
@@ -40,3 +43,8 @@ export default class HomeScreen extends Component {
     );
   }
 }
+
+export default connect(
+  null,
+  { getApi }
+)(HomeScreen);
