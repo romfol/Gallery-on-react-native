@@ -4,7 +4,7 @@ const initState = {
   data: [],
 };
 
-export default function RequestReducer(state = initState, action) {
+export default (state = initState, action) => {
   switch (action.type) {
     case GET_API:
       return {
@@ -14,4 +14,4 @@ export default function RequestReducer(state = initState, action) {
     default:
       return state;
   }
-}
+};

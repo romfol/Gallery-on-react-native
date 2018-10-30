@@ -5,28 +5,15 @@ import { DETAILS_PAGE } from '../../routes';
 import { connect } from 'react-redux';
 import { getApi } from '../../actions';
 
-const url =
-  'https://api.unsplash.com/photos/?client_id=f571da0ddf69c551d528f430bf27ab7f711a9a9d24179e57220a11998e72d3fd';
-
 class HomeScreen extends Component {
-  state = {
-    data: [],
-  };
-
-  componentDidMount = async () => {
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      this.setState({ data });
-    } catch (e) {
-      throw e;
-    }
-  };
+  componentDidMount() {
+    this.props.getApi();
+  }
 
   render() {
-    const { data } = this.state;
+    const { data } = this.props;
     const { navigation } = this.props;
-    console.log('proooooooooooooooooooops', this.props);
+
     return (
       <View style={{ backgroundColor: 'grey' }}>
         <Header />
@@ -44,7 +31,11 @@ class HomeScreen extends Component {
   }
 }
 
+const mapStateToProps = store => ({
+  data: store.request.data,
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { getApi }
 )(HomeScreen);
