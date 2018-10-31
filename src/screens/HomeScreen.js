@@ -3,7 +3,7 @@ import { View, ScrollView } from 'react-native';
 import { Header, List } from '../components';
 import { DETAILS_PAGE } from '../../constants';
 import { connect } from 'react-redux';
-import { getApi } from '../../actions';
+import { getApi } from '../actions';
 
 class HomeScreen extends Component {
   componentDidMount() {

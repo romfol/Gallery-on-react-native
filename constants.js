@@ -4,7 +4,7 @@ const window = Dimensions.get('window');
 export const h = window.height;
 export const w = window.width;
 
-//action type
+//action types
 export const GET_API = 'GET_API';
 
 //routes

@@ -1,4 +1,4 @@
-import { GET_API } from '../constants';
+import { GET_API } from '../../constants';
 
 export const getApi = () => ({
   type: GET_API,
