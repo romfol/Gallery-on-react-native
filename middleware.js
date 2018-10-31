@@ -1,9 +1,9 @@
 const middleware = store => next => action => {
-  if (action.payload) {
-    return action.payload.then(results => results.json()).then(results =>
+  if (action.request) {
+    return action.request.then(results => results.json()).then(results =>
       next({
         type: action.type,
-        payload: results,
+        request: results,
       })
     );
   }

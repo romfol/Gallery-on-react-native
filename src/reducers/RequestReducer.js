@@ -9,7 +9,7 @@ export default (state = initState, action) => {
     case GET_API:
       return {
         ...state,
-        data: action.payload,
+        data: action.request,
       };
     default:
       return state;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, ScrollView } from 'react-native';
 import { Header, List } from '../components';
-import { DETAILS_PAGE } from '../../routes';
+import { DETAILS_PAGE } from '../../constants';
 import { connect } from 'react-redux';
 import { getApi } from '../../actions';
 
