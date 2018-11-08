@@ -13,7 +13,7 @@ class HomeScreen extends Component {
   render() {
     const { data } = this.props;
     const { navigation } = this.props;
-
+    console.log('1111111111111111111111', data);
     return (
       <View style={{ backgroundColor: 'grey' }}>
         <Header />
@@ -22,7 +22,7 @@ class HomeScreen extends Component {
             <List
               data={item}
               key={item.id}
-              onPress={() => navigation.navigate(DETAILS_PAGE, item)}
+              onPress={() => navigation.navigate(DETAILS_PAGE, item)} //
             />
           ))}
         </ScrollView>
@@ -35,7 +35,13 @@ const mapStateToProps = store => ({
   data: store.request.data,
 });
 
+const mapDispatchToProps = dispatch => {
+  return {
+    getApi: () => dispatch(getApi()),
+  };
+};
+
 export default connect(
   mapStateToProps,
-  { getApi }
+  mapDispatchToProps
 )(HomeScreen);

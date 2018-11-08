@@ -2,6 +2,7 @@ import { GET_API } from '../../constants';
 
 const initState = {
   data: [],
+  isFetching: false,
 };
 
 export default (state = initState, action) => {
