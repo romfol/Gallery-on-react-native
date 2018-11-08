@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, ScrollView } from 'react-native';
+import { View, ScrollView, Text } from 'react-native';
 import { Header, List } from '../components';
 import { DETAILS_PAGE } from '../../constants';
 import { connect } from 'react-redux';
@@ -11,9 +11,18 @@ class HomeScreen extends Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, isFetching } = this.props.request;
     const { navigation } = this.props;
-    console.log('1111111111111111111111', data);
+
+    if (isFetching) {
+      return (
+        <View>
+          <Header />
+          <Text style={{ fontSize: 40 }}>Loading...</Text>
+        </View>
+      );
+    }
+
     return (
       <View style={{ backgroundColor: 'grey' }}>
         <Header />
@@ -32,14 +41,12 @@ class HomeScreen extends Component {
 }
 
 const mapStateToProps = store => ({
-  data: store.request.data,
+  request: store.request,
 });
 
-const mapDispatchToProps = dispatch => {
-  return {
-    getApi: () => dispatch(getApi()),
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  getApi: () => dispatch(getApi()),
+});
 
 export default connect(
   mapStateToProps,
