@@ -10,6 +10,7 @@ export const API =
 //action types
 export const GET_PHOTOS_SUCCESS = 'GET_PHOTOS_SUCCESS';
 export const GET_PHOTOS_REQUEST = 'GET_PHOTOS_REQUEST';
+export const GET_PHOTOS_FAILED = 'GET_PHOTOS_FAILED';
 
 //routes
 export const HOME_PAGE = 'HOME_PAGE';

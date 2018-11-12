@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, ScrollView, Text } from 'react-native';
-import { Header, List, Loader } from '../components';
+import { View, ScrollView } from 'react-native';
+import { Header, List, Loader, Error } from '../components';
 import { DETAILS_PAGE } from '../../constants';
 import { connect } from 'react-redux';
 import { getApi } from '../actions';
@@ -11,13 +11,15 @@ class HomeScreen extends Component {
   }
 
   render() {
-    const { data, isFetching } = this.props.request;
+    const { data, isFetching, error } = this.props.request;
     const { navigation } = this.props;
 
     return (
       <View style={{ backgroundColor: 'grey' }}>
         <Header />
-        {isFetching ? (
+        {error ? (
+          <Error />
+        ) : isFetching ? (
           <Loader />
         ) : (
           <ScrollView style={{ marginBottom: 100 }}>
