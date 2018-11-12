@@ -1,4 +1,4 @@
-import { GET_PHOTOS_SUCCESS, GET_PHOTOS_REQUEST, API } from '../../constants';
+import { GET_PHOTOS_REQUEST, GET_PHOTOS_SUCCESS, API } from '../../constants';
 
 export const getApi = () => {
   return dispatch => {
@@ -7,7 +7,7 @@ export const getApi = () => {
     });
 
     fetch(API)
-      .then(results => results.json())
+      .then(results => results.json(), error => console.log('error reason: ', error))
       .then(results => {
         dispatch({
           type: GET_PHOTOS_SUCCESS,

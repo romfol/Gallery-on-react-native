@@ -1,4 +1,4 @@
-import { GET_PHOTOS_SUCCESS, GET_PHOTOS_REQUEST } from '../../constants';
+import { GET_PHOTOS_REQUEST, GET_PHOTOS_SUCCESS } from '../../constants';
 
 const initState = {
   data: [],
