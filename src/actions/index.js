@@ -7,20 +7,18 @@ export const getApi = () => {
     });
 
     fetch(API)
-      .then(
-        results => results.json(),
-        error => {
-          console.log("error's reason: ", error);
-          dispatch({
-            type: GET_PHOTOS_FAILED,
-            error: true,
-          });
-        }
-      )
+      .then(results => results.json())
       .then(results => {
         dispatch({
           type: GET_PHOTOS_SUCCESS,
           request: results,
+        });
+      })
+      .catch(error => {
+        console.log("error's reason: ", error);
+        dispatch({
+          type: GET_PHOTOS_FAILED,
+          error: true,
         });
       });
   };
